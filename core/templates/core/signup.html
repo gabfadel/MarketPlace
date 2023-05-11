@@ -12,7 +12,30 @@ Sign Up
     <form method="post" action=".">
     {% csrf_token %}
 
-    {{form.as_p}}
+    {{form.non_fiel_erros}}
+
+    <div class="mb-3">
+        <label class="inline-block mb-2">
+            Username
+        </label><br>{{form.username}}
+    </div>
+
+    <div class="mb-3">
+        <label class="inline-block mb-2">
+            Email
+        </label><br>{{form.email}}
+    </div>
+
+    <div class="mb-3">
+        <label class="inline-block mb-2">
+            Password
+        </label><br>{{form.password1}}
+        <div class="mb-3">
+            <label class="inline-block mb-2">
+                Repeat Password
+            </label><br>{{form.password2}}
+        </div>
+    </div>
 
     <button class="py-4 pc-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white"> Submit
     </button>
